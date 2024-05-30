@@ -22,7 +22,7 @@ prediction_key = "5bf2b233edb94d888cd7c5cc54595458"
 content_type = "application/octet-stream"
 
 def main():
-    st.image("static/GeekInData Black.png", caption="Logo", use_column_width=True)
+    st.image("static/GeekInData Black.png", caption="Logo", width = 0.3)
     st.title("Product Prediction")
     st.markdown("### Instructions:")
     st.markdown("- Take a clear picture of the product [A Can, A Milk Bottle, A Water Bottle, A Carton] you want to predict.")
