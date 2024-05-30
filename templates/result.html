@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
+    <title>Product Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Prediction Result</h1>
-        <p><strong>Predicted Product:</strong> {{ predicted_product }}</p>
-        <p><strong>Probability:</strong> {{ probability }}</p>
-        <p><strong>Action:</strong> {{ action }}</p>
+        <h1>Product Prediction</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Upload">
+        </form>
     </div>
 </body>
 </html>
