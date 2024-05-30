@@ -41,6 +41,7 @@ def main():
             predicted_product = top_prediction['tagName']
             probability = top_prediction['probability']
             
+            
             st.header("Prediction Result")
             # Perform action based on the top predicted product
             if probability >= 0.5:
