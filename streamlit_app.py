@@ -40,7 +40,8 @@ def main():
 
             predicted_product = top_prediction['tagName']
             probability = top_prediction['probability']
-
+            
+            st.header("Prediction Result")
             # Perform action based on the top predicted product
             if probability >= 0.5:
                 action = move_product(predicted_product)
@@ -49,7 +50,6 @@ def main():
             else:
                 action = "No product detected, send for review"
 
-            st.header("Prediction Result")
             st.write(f"Action: {action}")
         else:
             st.error(f"Error: {response.status_code}")
