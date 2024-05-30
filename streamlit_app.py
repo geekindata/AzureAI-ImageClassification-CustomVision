@@ -43,7 +43,7 @@ def main():
             
             st.header("Prediction Result")
             # Perform action based on the top predicted product
-            if probability >= 0.5:
+            if probability >= 0.7:
                 action = move_product(predicted_product)
                 st.write(f"Predicted Product: {predicted_product}")
                 st.write(f"Probability: {probability}")
