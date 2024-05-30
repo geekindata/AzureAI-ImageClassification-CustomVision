@@ -23,6 +23,11 @@ content_type = "application/octet-stream"
 
 def main():
     st.title("Product Prediction")
+    st.markdown("### Instructions:")
+    st.markdown("- Take a clear picture of the product you want to predict.")
+    st.markdown("- Upload the image using the uploader below.")
+    st.markdown("- The model will predict the product and suggest an action based on the prediction.")
+
 
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
