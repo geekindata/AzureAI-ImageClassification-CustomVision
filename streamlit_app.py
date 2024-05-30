@@ -23,7 +23,7 @@ content_type = "application/octet-stream"
 
 def main():
     st.image("static/GeekInData Black.png", width = 300)
-    st.title("Product Prediction")
+    st.title("Fridge Product Prediction")
     st.markdown("### Instructions:")
     st.markdown("- Take a clear picture of the product [A Can, A Milk Bottle, A Water Bottle, A Carton] you want to predict.")
     st.markdown("- Upload the image using the uploader below.")
