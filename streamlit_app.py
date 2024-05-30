@@ -1,8 +1,5 @@
-from flask import Flask, render_template, request
+import streamlit as st
 import requests
-import os
-
-app = Flask(__name__)
 
 # Function to move product to production line based on predicted product
 def move_product(predicted_product):
@@ -24,28 +21,19 @@ url = "https://westeurope.api.cognitive.microsoft.com/customvision/v3.0/Predicti
 prediction_key = "5bf2b233edb94d888cd7c5cc54595458"
 content_type = "application/octet-stream"
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+def main():
+    st.title("Product Prediction")
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    if request.method == 'POST':
-        image_file = request.files['file']
-        image_data = image_file.read()
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
-        # Set headers
-        headers = {
-            'Prediction-Key': prediction_key,
-            'Content-Type': content_type
-        }
-
+    if uploaded_file is not None:
         # Make the API call
-        response = requests.post(url, headers=headers, data=image_data)
+        headers = {'Prediction-Key': prediction_key, 'Content-Type': content_type}
+        response = requests.post(url, headers=headers, data=uploaded_file.read())
 
         # Check the response
         if response.status_code == 200:
-            results = response.json()  # Parsing JSON response directly
+            results = response.json()
 
             # Get the top predicted product
             top_prediction = max(results['predictions'], key=lambda x: x['probability'])
@@ -56,10 +44,12 @@ def predict():
             # Perform action based on the top predicted product
             action = move_product(predicted_product)
 
-            return render_template('result.html', predicted_product=predicted_product, probability=probability, action=action)
-
+            st.header("Prediction Result")
+            st.write(f"Predicted Product: {predicted_product}")
+            st.write(f"Probability: {probability}")
+            st.write(f"Action: {action}")
         else:
-            return "Error: {}".format(response.status_code)
+            st.error(f"Error: {response.status_code}")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    main()
