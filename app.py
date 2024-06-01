@@ -22,6 +22,8 @@ prediction_key = "5bf2b233edb94d888cd7c5cc54595458"
 content_type = "application/octet-stream"
 
 def main():
+    # Set the title of the web app
+    st.set_page_config(page_title="Happy Birthday", page_icon="smallLogo-white.ico")
     st.image("static/GeekInData Black.png", width = 300)
     st.title("Fridge Product Prediction")
     st.markdown("### Instructions:")
