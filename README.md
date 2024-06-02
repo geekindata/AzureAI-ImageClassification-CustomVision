@@ -1,6 +1,6 @@
 # Image Classification Web App with Azure AI Services - Custom Vision and Streamlit
 
-In today's world of rapidly advancing technology, image classification has become a fundamental aspect of many applications, from identifying objects in photos to image classification in images. Leveraging the power of cloud services can greatly simplify and accelerate the development of such applications. In this repository, we'll explore how to build an image classification web app using Microsoft Azure AI Cognitive Services - Custom Vision, and Streamlit, accompanied by a streamlined CI/CD pipeline using GitHub Codespaces and Azure App Services.
+In today's world of rapidly advancing technology, image classification has become a fundamental aspect of many applications, from identifying objects in photos to analyzing images for various purposes. Leveraging the power of cloud services can greatly simplify and accelerate the development of such applications. In this repository, we'll explore how to build an image classification web app using Microsoft Azure AI Cognitive Services - Custom Vision, and Streamlit, accompanied by a streamlined CI/CD pipeline using GitHub Codespaces and Azure App Services.
 
 ![Web App Interface](https://github.com/geekindata/AzureAI-ImageClassification-CustomVision/assets/48961406/60ee7a20-6cd0-4a24-8580-95547db49857)
 
